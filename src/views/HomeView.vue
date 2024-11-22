@@ -10,9 +10,9 @@ const title = ref("HomeViews")
 const message = ref("Hello world")
 // truyền dữ liệu title qua provide
 provide('title', title.value)
-const deleteItem = (id) => {
+const deleteItem = async (id) => {
   try {
-    const deleteStudentResponse = instanceAxios.delete(`students/${id}`)
+    const deleteStudentResponse = await instanceAxios.delete(`students/${id}`)
     // fetchStudents()
     students.value = students.value.filter((student) => student.id !== id)
   } catch (error) {
