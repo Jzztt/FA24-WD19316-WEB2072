@@ -11,16 +11,22 @@ const message = ref("Hello world")
 // truyền dữ liệu title qua provide
 provide('title', title.value)
 const deleteItem = (id) => {
-  students.value = students.value.filter((student) => student.id !== id)
+  try {
+    const deleteStudentResponse = instanceAxios.delete(`students/${id}`)
+    // fetchStudents()
+    students.value = students.value.filter((student) => student.id !== id)
+  } catch (error) {
+    console.log('some thing wrong');
+  }
 }
 
-
-
-
 const fetchStudents = async () => {
-  const fetchStudentsResponse = await instanceAxios.get('students')
-  console.log(fetchStudentsResponse);
-  students.value = fetchStudentsResponse.data
+  try {
+    const fetchStudentsResponse = await instanceAxios.get('students')
+    students.value = fetchStudentsResponse.data
+  } catch (error) {
+    console.log('some thing wrong');
+  }
 }
 
 onMounted(() => {

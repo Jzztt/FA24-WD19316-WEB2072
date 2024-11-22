@@ -1,14 +1,14 @@
 {
-    "students": [
-        {
-            "id": 1,
-            "name": "John",
-            "mssv": "21T1021000"
-        },
-        {
-            "id": 2,
-            "name": "Merry",
-            "mssv": "21T10210123"
-        }
-    ]
+  "students": [
+    {
+        "id": 1,
+        "name": "John",
+        "mssv": "21T1021000"
+    },
+    {
+        "id": 2,
+        "name": "Merry",
+        "mssv": "21T10210123"
+    }
+]
 }
