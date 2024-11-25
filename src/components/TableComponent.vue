@@ -17,7 +17,9 @@
                     <td>{{ id }}</td>
                     <td>{{ name }}</td>
                     <td>{{ mssv }}</td>
-                    <td><button class="btn btn-danger" @click="handleDelete(id)">Delete</button></td>
+                    <td><button class="btn btn-danger" @click="handleDelete(id)">Delete</button>
+                        <button class="btn btn-primary">Edit</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -27,7 +29,7 @@
 <script setup>
 import { inject } from 'vue';
 
-defineProps(['students','msg'])
+defineProps(['students', 'msg'])
 // defineProps({
 //     students: [
 //         {
@@ -38,7 +40,7 @@ defineProps(['students','msg'])
 //     ]
 // })
 // Nhận dữ liệu title, nếu ko có dữ liệu hiện thị tham số thứ 2
-const title = inject('title',"No title")
+const title = inject('title', "No title")
 
 // định nghĩa
 const emit = defineEmits(["deleteStudents"])
