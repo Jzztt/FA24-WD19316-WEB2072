@@ -1,9 +1,8 @@
 <script setup>
 // import { ref } from 'vue';
 // import LifeCycle from './components/LifeCycle.vue';
-
 // import ParentSlot from './components/ParentSlot.vue';
-import HomeView from './views/HomeView.vue';
+// import HomeView from './views/HomeView.vue';
 // import FormBinding from './components/FormBinding.vue';
 // import EventBinding from './components/EventBinding.vue'
 // import ListRendering from './components/ListRendering.vue'
@@ -19,13 +18,15 @@ import HomeView from './views/HomeView.vue';
       <LifeCycle />
     </div> -->
     <!-- <ParentSlot/> -->
-    <HomeView />
+    <!-- <HomeView /> -->
+
     <!-- <FormBinding /> -->
     <!-- <EventBinding /> -->
     <!-- <ListRendering /> -->
     <!-- <ConditionalRendering /> -->
     <!-- <StateVueJs /> -->
     <!-- <DataBinding /> -->
+     <RouterView></RouterView>
   </div>
 </template>
 

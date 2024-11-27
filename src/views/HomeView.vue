@@ -14,7 +14,7 @@ const isShowModal = ref(false)
 const deleteItem = async (id) => {
   try {
     const isDeleted = confirm('Are you sure')
-    if(!isDeleted) return
+    if (!isDeleted) return
     const deleteStudentResponse = await instanceAxios.delete(`students/${id}`)
     // fetchStudents()
     students.value = students.value.filter((student) => student.id !== id)
@@ -92,6 +92,9 @@ onMounted(() => {
           <td>
             <button class="btn btn-danger" @click="deleteItem(id)">Delete</button>
             <button class="btn btn-primary" @click="handleEdit(id)">Edit</button>
+            <!-- <RouterLink class="btn btn-primary" :to='`/students/${id}`'>Detail</RouterLink> -->
+            <RouterLink class="btn btn-primary" :to='{ name: "studentDetail", params: { id } }'>Detail</RouterLink>
+
           </td>
         </tr>
       </tbody>
