@@ -13,6 +13,8 @@ const isShowModal = ref(false)
 
 const deleteItem = async (id) => {
   try {
+    const isDeleted = confirm('Are you sure')
+    if(!isDeleted) return
     const deleteStudentResponse = await instanceAxios.delete(`students/${id}`)
     // fetchStudents()
     students.value = students.value.filter((student) => student.id !== id)
@@ -51,11 +53,9 @@ const handleUpdate = async (student) => {
       }
       return item
     })
-
   } catch (error) {
     console.log('some thing wrong');
   }
-
 }
 const handleEdit = (id) => {
   editIdSelected.value = id
